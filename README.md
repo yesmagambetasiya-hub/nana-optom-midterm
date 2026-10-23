@@ -270,3 +270,39 @@ AI assistance was used for:
 - Organizing project documentation
 
 The project team reviewed the suggestions and checked the final website structure.
+
+## Assignment 4–5 — JavaScript Functionality
+
+### Technologies Added
+- JavaScript (ES6)
+- DOM manipulation
+- Event listeners
+- Arrays, loops, conditions, and functions
+- Form validation
+- Session Storage
+
+### Functionality Plan
+
+| Page | Visitor Goal | JavaScript Functionality | Expected Result | Responsible |
+|---|---|---|---|---|
+| Products | Find cosmetics | Search, filter, and sort products | Matching products are displayed | Team |
+| Products | Select products | Shopping cart with quantity controls | Cart total updates automatically | Team |
+| Order | Place a demo order | Cart summary and form validation | Demo order confirmation appears | Team |
+| Feedback | Share an opinion | Form validation and customer reviews | Valid feedback is displayed | Assiya |
+| Login | Enter login information | Password validation and visibility toggle | Validation messages and demo notification appear | Team |
+| About | Explore store information | JavaScript interactions | Interactive store information | Assiya |
+
+### JavaScript Files
+- `js/main.js` — shared website functionality
+- `js/products.js` — product search, filtering, sorting, and cart
+- `js/order.js` — order summary, calculations, and validation
+- `js/about.js` — About page functionality
+- `js/feedback.js` — feedback form and reviews
+- `js/login.js` — login validation and notifications
+
+### Demonstration Notice
+This is a front-end educational project. No real payments, orders, or user authentication are processed. All confirmations are demonstrations.
+
+### Git Tags
+- `midterm` — HTML, CSS, and Bootstrap version
+- `assignment-5` — completed JavaScript functionality
