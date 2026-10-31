@@ -1,3 +1,4 @@
+
 /* NANA OPTOM — UNIFIED INNER PAGES */
 /* Products, Order, About, Feedback */
 
@@ -204,7 +205,9 @@ body:not(.home-page) .navbar .login-link {
     font-weight: 700;
 }
 
-/* FEEDBACK CARDS */#feedback-main .feedback-group {
+/* FEEDBACK CARDS */
+
+#feedback-main .feedback-group {
     height: 100%;
 }
 
@@ -408,7 +411,9 @@ body:not(.home-page) footer {
 
     #customer-reviews > h2 {
         font-size: 32px;
-    }#customer-reviews .review-card {
+    }
+
+    #customer-reviews .review-card {
         padding: 22px;
     }
 }

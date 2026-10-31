@@ -1,75 +1,76 @@
+
 'use strict';
 
 // NANA OPTOM — Demo Login
 // Languages: English, Russian, Kazakh
 
 const loginLanguage = ['en', 'ru', 'kk'].includes(
-  localStorage.getItem('nana-language')
+  localStorage.getItem('nana-language')
 ) ? localStorage.getItem('nana-language') : 'en';
 
 const loginTranslations = {
-  en: {
-    show: 'Show Password',
-    hide: 'Hide Password',
-    strength: 'Password strength',
-    notEntered: 'Not entered',
-    weak: 'Weak',
-    medium: 'Medium',
-    strong: 'Strong',
-    emailError: 'Please enter a valid email address.',
-    passwordError: 'Password must contain at least 8 characters.',
-    result: 'Login Result',
-    success: 'Demo login form validated successfully!',
-    email: 'Email',
-    remember: 'Remember me',
-    yes: 'Yes',
-    no: 'No',
-    disclaimer:
-      'Demo only. No authentication was performed and no account session was created.',
-    correct: 'Please correct the highlighted fields.'
-  },
+  en: {
+    show: 'Show Password',
+    hide: 'Hide Password',
+    strength: 'Password strength',
+    notEntered: 'Not entered',
+    weak: 'Weak',
+    medium: 'Medium',
+    strong: 'Strong',
+    emailError: 'Please enter a valid email address.',
+    passwordError: 'Password must contain at least 8 characters.',
+    result: 'Login Result',
+    success: 'Demo login form validated successfully!',
+    email: 'Email',
+    remember: 'Remember me',
+    yes: 'Yes',
+    no: 'No',
+    disclaimer:
+      'Demo only. No authentication was performed and no account session was created.',
+    correct: 'Please correct the highlighted fields.'
+  },
 
-  ru: {
-    show: 'Показать пароль',
-    hide: 'Скрыть пароль',
-    strength: 'Надёжность пароля',
-    notEntered: 'Не введён',
-    weak: 'Слабый',
-    medium: 'Средний',
-    strong: 'Надёжный',
-    emailError: 'Введите корректный адрес электронной почты.',
-    passwordError: 'Пароль должен содержать минимум 8 символов.',
-    result: 'Результат входа',
-    success: 'Демонстрационная форма успешно прошла проверку!',
-    email: 'Электронная почта',
-    remember: 'Запомнить меня',
-    yes: 'Да',
-    no: 'Нет',
-    disclaimer:
-      'Это демонстрация. Авторизация не выполнялась, сессия пользователя не создавалась.',
-    correct: 'Исправьте выделенные поля.'
-  },
+  ru: {
+    show: 'Показать пароль',
+    hide: 'Скрыть пароль',
+    strength: 'Надёжность пароля',
+    notEntered: 'Не введён',
+    weak: 'Слабый',
+    medium: 'Средний',
+    strong: 'Надёжный',
+    emailError: 'Введите корректный адрес электронной почты.',
+    passwordError: 'Пароль должен содержать минимум 8 символов.',
+    result: 'Результат входа',
+    success: 'Демонстрационная форма успешно прошла проверку!',
+    email: 'Электронная почта',
+    remember: 'Запомнить меня',
+    yes: 'Да',
+    no: 'Нет',
+    disclaimer:
+      'Это демонстрация. Авторизация не выполнялась, сессия пользователя не создавалась.',
+    correct: 'Исправьте выделенные поля.'
+  },
 
-  kk: {
-    show: 'Құпиясөзді көрсету',
-    hide: 'Құпиясөзді жасыру',
-    strength: 'Құпиясөздің сенімділігі',
-    notEntered: 'Енгізілмеген',
-    weak: 'Әлсіз',
-    medium: 'Орташа',
-    strong: 'Күшті',
-    emailError: 'Дұрыс электрондық пошта енгізіңіз.',
-    passwordError: 'Құпиясөз кемінде 8 таңбадан тұруы керек.',
-    result: 'Кіру нәтижесі',
-    success: 'Демонстрациялық кіру формасы тексеруден сәтті өтті!',
-    email: 'Электрондық пошта',
-    remember: 'Мені есте сақтау',
-    yes: 'Иә',
-    no: 'Жоқ',
-    disclaimer:
-      'Бұл тек демонстрация. Нақты авторизация жасалмады және пайдаланушы сессиясы құрылмады.',
-    correct: 'Белгіленген өрістерді түзетіңіз.'
-  }
+  kk: {
+    show: 'Құпиясөзді көрсету',
+    hide: 'Құпиясөзді жасыру',
+    strength: 'Құпиясөздің сенімділігі',
+    notEntered: 'Енгізілмеген',
+    weak: 'Әлсіз',
+    medium: 'Орташа',
+    strong: 'Күшті',
+    emailError: 'Дұрыс электрондық пошта енгізіңіз.',
+    passwordError: 'Құпиясөз кемінде 8 таңбадан тұруы керек.',
+    result: 'Кіру нәтижесі',
+    success: 'Демонстрациялық кіру формасы тексеруден сәтті өтті!',
+    email: 'Электрондық пошта',
+    remember: 'Мені есте сақтау',
+    yes: 'Иә',
+    no: 'Жоқ',
+    disclaimer:
+      'Бұл тек демонстрация. Нақты авторизация жасалмады және пайдаланушы сессиясы құрылмады.',
+    correct: 'Белгіленген өрістерді түзетіңіз.'
+  }
 };
 
 const lt = loginTranslations[loginLanguage];
@@ -85,91 +86,89 @@ loginForm.noValidate = true;
 // HELPER FUNCTIONS
 
 function createLoginElement(tag, className = '', text = '') {
-  const element = document.createElement(tag);
+  const element = document.createElement(tag);
 
-  if (className) element.className = className;
+  if (className) element.className = className;
 
-  element.textContent = text;
-  return element;
+  element.textContent = text;
+  return element;
 }
 
 function showLoginError(input, message) {
-  input.classList.add('is-invalid');
+  input.classList.add('is-invalid');
 
-  let error = input.parentElement.querySelector('.invalid-feedback');
+  let error = input.parentElement.querySelector('.invalid-feedback');
 
-  if (!error) {
-    error = createLoginElement('div', 'invalid-feedback');
-    input.parentElement.appendChild(error);
-  }
+  if (!error) {
+    error = createLoginElement('div', 'invalid-feedback');
+    input.parentElement.appendChild(error);
+  }
 
-  error.textContent = message;
+  error.textContent = message;
 }
 
 function clearLoginError(input) {
-  input.classList.remove('is-invalid');
+  input.classList.remove('is-invalid');
 
-  const error = input.parentElement.querySelector('.invalid-feedback');
+  const error = input.parentElement.querySelector('.invalid-feedback');
 
-  if (error) error.remove();
+  if (error) error.remove();
 }
 
 // FEATURE 1: SHOW / HIDE PASSWORD
 
-const passwordToggle = createLoginElement(
-  'button',
-  'btn btn-outline-secondary mt-2',
-  lt.show
-);
 
-passwordToggle.type = 'button';
-passwordToggle.setAttribute('aria-pressed', 'false');
+// FEATURE 1: SHOW / HIDE PASSWORD
 
-passwordInput.after(passwordToggle);
+const passwordToggle = document.getElementById('togglePassword');
 
 passwordToggle.addEventListener('click', () => {
-  const isHidden = passwordInput.type === 'password';
+    const isHidden = passwordInput.type === 'password';
 
-  passwordInput.type = isHidden ? 'text' : 'password';
+    passwordInput.type = isHidden ? 'text' : 'password';
 
-  passwordToggle.textContent = isHidden
-    ? lt.hide
-    : lt.show;
+    passwordToggle.setAttribute(
+        'aria-pressed',
+        String(isHidden)
+    );
 
-  passwordToggle.setAttribute(
-    'aria-pressed',
-    String(isHidden)
-  );
+    passwordToggle.setAttribute(
+        'aria-label',
+        isHidden ? lt.hide : lt.show
+    );
 });
+
 
 // FEATURE 2: PASSWORD STRENGTH
 
 const strengthText = createLoginElement(
-  'p',
-  'small text-muted mt-2'
+  'p',
+  'small text-muted mt-2'
 );
 
-passwordToggle.after(strengthText);function getPasswordStrength(password) {
-  if (password.length === 0) return lt.notEntered;
+document.querySelector('.password-wrapper').after(strengthText);
 
-  let score = 0;
+function getPasswordStrength(password) {
+  if (password.length === 0) return lt.notEntered;
 
-  if (password.length >= 8) score += 1;
-  if (/[A-Z]/.test(password)) score += 1;
-  if (/[a-z]/.test(password)) score += 1;
-  if (/[0-9]/.test(password)) score += 1;
-  if (/[^A-Za-z0-9]/.test(password)) score += 1;
+  let score = 0;
 
-  if (score <= 2) return lt.weak;
-  if (score <= 4) return lt.medium;
+  if (password.length >= 8) score += 1;
+  if (/[A-Z]/.test(password)) score += 1;
+  if (/[a-z]/.test(password)) score += 1;
+  if (/[0-9]/.test(password)) score += 1;
+  if (/[^A-Za-z0-9]/.test(password)) score += 1;
 
-  return lt.strong;
+  if (score <= 2) return lt.weak;
+  if (score <= 4) return lt.medium;
+
+  return lt.strong;
 }
 
 function updatePasswordStrength() {
-  const strength = getPasswordStrength(passwordInput.value);
+  const strength = getPasswordStrength(passwordInput.value);
 
-  strengthText.textContent = `${lt.strength}: ${strength}`;
+  strengthText.textContent = `${lt.strength}: ${strength}`;
 }
 
 passwordInput.addEventListener('input', updatePasswordStrength);
@@ -179,156 +178,176 @@ updatePasswordStrength();
 // FEATURE 3: LOGIN VALIDATION
 
 function validateLogin() {
-  clearLoginError(emailInput);
-  clearLoginError(passwordInput);
+  clearLoginError(emailInput);
+  clearLoginError(passwordInput);
 
-  let firstInvalid = null;
+  let firstInvalid = null;
 
-  const email = emailInput.value.trim();
-  const password = passwordInput.value;
+  const email = emailInput.value.trim();
+  const password = passwordInput.value;
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    showLoginError(emailInput, lt.emailError);
-    firstInvalid = emailInput;
-  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showLoginError(emailInput, lt.emailError);
+    firstInvalid = emailInput;
+  }
 
-  if (password.length < 8) {
-    showLoginError(passwordInput, lt.passwordError);
+  if (password.length < 8) {
+    showLoginError(passwordInput, lt.passwordError);
 
-    if (!firstInvalid) {
-      firstInvalid = passwordInput;
-    }
-  }
+    if (!firstInvalid) {
+      firstInvalid = passwordInput;
+    }
+  }
 
-  if (firstInvalid) {
-    firstInvalid.focus();
-    return false;
-  }
+  if (firstInvalid) {
+    firstInvalid.focus();
+    return false;
+  }
 
-  return true;
+  return true;
 }
 
-// LOGIN RESULT
+// LOGIN TOAST NOTIFICATION
 
-function displayLoginResult() {
-  loginResult.replaceChildren();
+let loginToastTimer;
 
-  loginResult.appendChild(
-    createLoginElement('h3', '', lt.result)
-  );
+function showLoginToast(message, type = 'success') {
+    let toast = document.getElementById('login-toast');
 
-  loginResult.appendChild(
-    createLoginElement(
-      'p',
-      'text-success fw-bold',
-      lt.success
-    )
-  );
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'login-toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        document.body.appendChild(toast);
+    }
 
-  loginResult.appendChild(
-    createLoginElement(
-      'p',
-      '',
-      `${lt.email}: ${emailInput.value.trim()}`
-    )
-  );
+    clearTimeout(loginToastTimer);
 
-  loginResult.appendChild(
-    createLoginElement(
-      'p',
-      '',
-      `${lt.remember}: ${rememberInput.checked ? lt.yes : lt.no}`
-    )
-  );
+    toast.className = `login-toast ${type}`;
+    toast.replaceChildren();
 
-  loginResult.appendChild(
-    createLoginElement('p', 'small', lt.disclaimer)
-  );
+    const icon = document.createElement('span');
+    icon.className = 'login-toast-icon';
+    icon.textContent = type === 'success' ? '✓' : '!';
+
+    const content = document.createElement('div');
+
+    const title = document.createElement('strong');
+    title.textContent = type === 'success'
+        ? {
+            en: 'Login Successful!',
+            ru: 'Проверка пройдена!',
+            kk: 'Тексеру сәтті өтті!'
+        }[loginLanguage]
+        : {
+            en: 'Please check your details',
+            ru: 'Проверьте данные',
+            kk: 'Деректерді тексеріңіз'
+        }[loginLanguage];
+
+    const description = document.createElement('p');
+    description.textContent = message;
+
+    const closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'login-toast-close';
+    closeButton.textContent = '×';
+    closeButton.setAttribute('aria-label', 'Close notification');
+
+    closeButton.addEventListener('click', () => {
+        toast.classList.remove('show');
+    });
+
+    content.append(title, description);
+    toast.append(icon, content, closeButton);
+
+    requestAnimationFrame(() => {
+        toast.classList.add('show');
+    });
+
+    loginToastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 5000);
 }
+
 
 // FORM SUBMIT
 
 loginForm.addEventListener('submit', event => {
-  event.preventDefault();
+    event.preventDefault();
 
-  loginResult.replaceChildren();
+    if (!validateLogin()) {
+        showLoginToast(lt.correct, 'error');
+        return;
+    }
 
-  if (!validateLogin()) {
-    loginResult.appendChild(
-      createLoginElement('h3', '', lt.result)
-    );
-
-    loginResult.appendChild(
-      createLoginElement('p', 'text-danger', lt.correct)
-    );
-
-    return;
-  }
-
-  displayLoginResult();
+    showLoginToast(lt.disclaimer, 'success');
 });
 
 emailInput.addEventListener('input', () => {
-  clearLoginError(emailInput);
+  clearLoginError(emailInput);
 });
 
 passwordInput.addEventListener('input', () => {
-  clearLoginError(passwordInput);
+  clearLoginError(passwordInput);
 });
 
 console.log('NANA OPTOM Login language:', loginLanguage);
 
- // LOGIN PAGE — STATIC CONTENT TRANSLATION
+ // LOGIN PAGE — STATIC CONTENT TRANSLATION
 
 const loginPageTranslations = {
-  en: {
-    pageTitle: 'NANA OPTOM | Login',
-    subtitle: 'Wholesale Cosmetics',
-    heading: 'Login',
-    description:
-      'Enter your account information to continue. Your login result will appear below the form.',
-    emailLabel: 'Email:',
-    passwordLabel: 'Password:',
-    rememberLabel: 'Remember me',
-    emailPlaceholder: 'Enter your email',
-    passwordPlaceholder: 'Enter your password',
-    loginButton: 'Login',
-    waiting:
-      'After submitting the form, your login result will appear here.',
-    contact: 'Contact:'
-  },
+  en: {
+    pageTitle: 'NANA OPTOM | Login',
+    subtitle: 'Wholesale Cosmetics',
+    heading: 'Login',
+    description:
+      'Enter your account information to continue. Your login result will appear below the form.',
+    emailLabel: 'Email:',
+    passwordLabel: 'Password:',
+    rememberLabel: 'Remember me',
+    emailPlaceholder: 'Enter your email',
+    passwordPlaceholder: 'Enter your password',
+    loginButton: 'Login',
+    waiting:
+      'After submitting the form, your login result will appear here.',
+    contact: 'Contact:'
+  },
 
-  ru: {
-    pageTitle: 'NANA OPTOM | Вход',
-    subtitle: 'Косметика оптом',
-    heading: 'Вход',
-    description:
-      'Введите данные своей учётной записи, чтобы продолжить. Результат входа появится под формой.',
-    emailLabel: 'Электронная почта:',
-    passwordLabel: 'Пароль:',
-    rememberLabel: 'Запомнить меня',
-    emailPlaceholder: 'Введите электронную почту',
-    passwordPlaceholder: 'Введите пароль',
-    loginButton: 'Войти',
-    waiting:
-      'После отправки формы здесь появится результат входа.',
-    contact: 'Контакты:'
-  },kk: {
-    pageTitle: 'NANA OPTOM | Кіру',
-    subtitle: 'Косметиканы көтерме сату',
-    heading: 'Кіру',
-    description:
-      'Жалғастыру үшін аккаунт деректерін енгізіңіз. Кіру нәтижесі форманың астында көрсетіледі.',
-    emailLabel: 'Электрондық пошта:',
-    passwordLabel: 'Құпиясөз:',
-    rememberLabel: 'Мені есте сақтау',
-    emailPlaceholder: 'Электрондық поштаңызды енгізіңіз',
-    passwordPlaceholder: 'Құпиясөзіңізді енгізіңіз',
-    loginButton: 'Кіру',
-    waiting:
-      'Форманы жібергеннен кейін кіру нәтижесі осында көрсетіледі.',
-    contact: 'Байланыс:'
-  }
+  ru: {
+    pageTitle: 'NANA OPTOM | Вход',
+    subtitle: 'Косметика оптом',
+    heading: 'Вход',
+    description:
+      'Введите данные своей учётной записи, чтобы продолжить. Результат входа появится под формой.',
+    emailLabel: 'Электронная почта:',
+    passwordLabel: 'Пароль:',
+    rememberLabel: 'Запомнить меня',
+    emailPlaceholder: 'Введите электронную почту',
+    passwordPlaceholder: 'Введите пароль',
+    loginButton: 'Войти',
+    waiting:
+      'После отправки формы здесь появится результат входа.',
+    contact: 'Контакты:'
+  },
+
+  kk: {
+    pageTitle: 'NANA OPTOM | Кіру',
+    subtitle: 'Косметиканы көтерме сату',
+    heading: 'Кіру',
+    description:
+      'Жалғастыру үшін аккаунт деректерін енгізіңіз. Кіру нәтижесі форманың астында көрсетіледі.',
+    emailLabel: 'Электрондық пошта:',
+    passwordLabel: 'Құпиясөз:',
+    rememberLabel: 'Мені есте сақтау',
+    emailPlaceholder: 'Электрондық поштаңызды енгізіңіз',
+    passwordPlaceholder: 'Құпиясөзіңізді енгізіңіз',
+    loginButton: 'Кіру',
+    waiting:
+      'Форманы жібергеннен кейін кіру нәтижесі осында көрсетіледі.',
+    contact: 'Байланыс:'
+  }
 };
 
 const lp = loginPageTranslations[loginLanguage];
@@ -343,7 +362,7 @@ document.title = lp.pageTitle;
 const loginSubtitle = document.querySelector('header .lead');
 
 if (loginSubtitle) {
-  loginSubtitle.textContent = lp.subtitle;
+  loginSubtitle.textContent = lp.subtitle;
 }
 
 // LOGIN SECTION
@@ -351,42 +370,42 @@ if (loginSubtitle) {
 const loginSection = document.getElementById('login-section');
 
 if (loginSection) {
-  const heading = loginSection.querySelector('h2');
-  const description = loginSection.querySelector(':scope > p');
+  const heading = loginSection.querySelector('h2');
+  const description = loginSection.querySelector(':scope > p');
 
-  if (heading) {
-    heading.textContent = lp.heading;
-  }
+  if (heading) {
+    heading.textContent = lp.heading;
+  }
 
-  if (description) {
-    description.textContent = lp.description;
-  }
+  if (description) {
+    description.textContent = lp.description;
+  }
 }
 
 // FORM LABELS
 
 const loginEmailLabel = loginForm.querySelector(
-  'label[for="login-email"]'
+  'label[for="login-email"]'
 );
 
 const loginPasswordLabel = loginForm.querySelector(
-  'label[for="login-password"]'
+  'label[for="login-password"]'
 );
 
 const loginRememberLabel = loginForm.querySelector(
-  'label[for="remember"]'
+  'label[for="remember"]'
 );
 
 if (loginEmailLabel) {
-  loginEmailLabel.textContent = lp.emailLabel;
+  loginEmailLabel.textContent = lp.emailLabel;
 }
 
 if (loginPasswordLabel) {
-  loginPasswordLabel.textContent = lp.passwordLabel;
+  loginPasswordLabel.textContent = lp.passwordLabel;
 }
 
 if (loginRememberLabel) {
-  loginRememberLabel.textContent = lp.rememberLabel;
+  loginRememberLabel.textContent = lp.rememberLabel;
 }
 
 // PLACEHOLDERS
@@ -399,25 +418,25 @@ passwordInput.placeholder = lp.passwordPlaceholder;
 const loginSubmitButton = document.getElementById('login-button');
 
 if (loginSubmitButton) {
-  loginSubmitButton.textContent = lp.loginButton;
+  loginSubmitButton.textContent = lp.loginButton;
 }
 
 // INITIAL LOGIN RESULT
 
-loginResult.replaceChildren(
-  createLoginElement('h3', '', lt.result),
-  createLoginElement('p', '', lp.waiting)
-);
+// Hide old result panel
+if (loginResult) {
+    loginResult.style.display = 'none';
+}
 
 // FOOTER CONTACT
 
 const loginFooterContact = document.querySelector('footer p');
 
 if (loginFooterContact) {
-  const phoneLink = loginFooterContact.querySelector('a');
+  const phoneLink = loginFooterContact.querySelector('a');
 
-  if (phoneLink) {
-    loginFooterContact.firstChild.textContent =
-      `\n        ${lp.contact}\n        `;
-  }
+  if (phoneLink) {
+    loginFooterContact.firstChild.textContent =
+      `\n        ${lp.contact}\n        `;
+  }
 }

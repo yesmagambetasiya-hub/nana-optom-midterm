@@ -227,7 +227,9 @@
     width: 30%;
     height: 1px;
     background: rgba(243, 189, 89, .55);
-}#order-section .order-heading h2 {
+}
+
+#order-section .order-heading h2 {
     font: 700 40px/1.15 Georgia, serif;
     color: var(--gold);
     margin: 0 0 7px;
@@ -435,7 +437,9 @@
 #delivery-label {
     font-size: 12px;
     margin: 0 0 8px;
-}.delivery-options {
+}
+
+.delivery-options {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -655,7 +659,9 @@
 
 #order-confirmation .text-success {
     color: #a1ddb8 !important;
-}#order-confirmation .list-group {
+}
+
+#order-confirmation .list-group {
     display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
