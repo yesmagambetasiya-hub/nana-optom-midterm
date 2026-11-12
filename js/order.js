@@ -683,6 +683,7 @@ $(function () {
 
       showWaiting();
       renderSummary();
+
     }
   );
 
@@ -1131,6 +1132,39 @@ $form.on('input change', 'input, select, textarea', function () {
     }, 0);
   });
 
+  console.log('NANA OPTOM Order language:', lang);
+  console.log('jQuery Order Page initialized');
+
+      //button
+
+      const title = document.querySelector('h1');
+      const form = document.querySelector('form');
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = 'Show / Hide Form';
+      btn.className = 'btn btn-warning';
+
+      title.after(btn);
+
+      btn.addEventListener('click', function () {
+          form.hidden = !form.hidden;
+      });
+
+  //title
+
+  const $title = $('h1').filter(function () {
+    return $(this).text().trim() === 'Order Form';
+    });
+
+  const $orderForm = $('form').first();
+
+  $title.css('cursor', 'pointer');
+
+  $title.on('click', function () {
+    $orderForm.slideToggle(400);
+});
+
   // =========================
   // INITIALIZATION
   // =========================
@@ -1140,6 +1174,6 @@ $form.on('input change', 'input, select, textarea', function () {
   showWaiting();
   renderSummary();
 
-  console.log('NANA OPTOM Order language:', lang);
-  console.log('jQuery Order Page initialized');
+  
+
 });

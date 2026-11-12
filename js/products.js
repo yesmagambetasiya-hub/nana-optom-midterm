@@ -1,3 +1,4 @@
+
 'use strict';
 
 // NANA OPTOM — Products (Kazakh / Russian / English)
@@ -71,7 +72,8 @@ const productTranslations = {
       'Celimax Toner': 'Тонер Celimax',
       'Mini Blush': 'Мини-румяна',
       'Lip Gloss': 'Блеск для губ',
-      'Makeup Setting Spray': 'Фиксатор макияжа','Mineral Powder': 'Минеральная пудра',
+      'Makeup Setting Spray': 'Фиксатор макияжа',
+      'Mineral Powder': 'Минеральная пудра',
       'BB Cream': 'BB-крем',
       'Eyeshadow': 'Тени для век',
       'Stick Blush': 'Румяна-стик',
@@ -141,9 +143,11 @@ const tableBody = document.getElementById('product-table-body');
 const priceSection = document.getElementById('price-section');
 const productsMain = document.getElementById('products-main');
 
-const CART_KEY = 'nana-order-cart';function loadCart() {
+const CART_KEY = 'nana-order-cart';
+
+function loadCart() {
   try {
-    const saved = JSON.parse(sessionStorage.getItem(CART_KEY)  ||'[]');
+    const saved = JSON.parse(sessionStorage.getItem(CART_KEY) || '[]');
 
     if (!Array.isArray(saved)) return [];
 
@@ -335,8 +339,8 @@ function getFilteredProducts() {
     const name = productName(product).toLowerCase();
 
     const matchesSearch =
-      name.includes(query) 
-      product.name.toLowerCase().includes(query) 
+      name.includes(query) ||
+      product.name.toLowerCase().includes(query) ||
       categoryName(product.category).toLowerCase().includes(query);
 
     const matchesCategory =
@@ -535,7 +539,9 @@ function renderCart() {
   }
 
   cart.forEach(item => {
-    const product = products.find(p => p.id === item.id);if (!product) return;
+    const product = products.find(p => p.id === item.id);
+
+    if (!product) return;
 
     const row = makeElement(
       'div',
